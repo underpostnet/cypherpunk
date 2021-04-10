@@ -5,12 +5,16 @@ const SHA256 = require('crypto-js/sha256');
 
 class Block {
     constructor(data) {
-        this.index = 0;
-        this.date = new Date();
+
         this.data = data;
+
+        this.index = 0;
         this.previousHash = "0";
+
+        this.date = new Date();
         this.hash = this.calculateHash();
         this.nonce = 0;
+
     }
 
     calculateHash() {
@@ -32,7 +36,7 @@ class Blockchain {
 	}
 
 	createGenesis() {
-		return new Block(0, {amount: 100});
+		return new Block({amount: 100});
 	}
 
 	latestBlock() {
@@ -40,12 +44,14 @@ class Blockchain {
 	}
 
 	addBlock(newBlock) {
+
 		newBlock.index = this.latestBlock().index + 1;
 		newBlock.previousHash = this.latestBlock().hash;
-		newBlock.hash = newBlock.calculateHash();
+
 		newBlock.mineBlock(this.difficulty);
 		console.log('Minado!! '+ newBlock.hash+' con nonce '+ newBlock.nonce);
 		this.chain.push(newBlock);
+    
 	}
 
 	checkValid() {
