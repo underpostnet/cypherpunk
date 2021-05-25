@@ -2,6 +2,7 @@
 // https://www.geeksforgeeks.org/node-js-crypto-generatekeypairsync-method/
 
 const crypto = require("crypto");
+var var_dump = require("var_dump")
 
 // The `generateKeyPairSync` method accepts two arguments:
 // 1. The type ok keys we want, which in this case is "rsa"
@@ -11,8 +12,8 @@ const { publicKey, privateKey } = crypto.generateKeyPairSync("rsa", {
 	modulusLength: 2048,
 });
 
-console.log(publicKey);
-console.log(privateKey);
+var_dump(publicKey.toString("base64"));
+var_dump(privateKey.toString("base64"));
 
 // use the public and private keys
 // ...
