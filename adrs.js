@@ -1,3 +1,5 @@
+// https://steemit.com/bitcoin/@dlystyr/how-to-create-bitcoin-addresses-in-node-js-cryptographically
+
 const crypto = require('crypto');
 const EC = require('elliptic').ec;
 const RIPEMD160 = require('ripemd160');
