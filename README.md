@@ -4,6 +4,36 @@
 ![underpost.net](https://1.bp.blogspot.com/-WxI-eBKcBS0/X0bOTxIcVRI/AAAAAAAAA2w/4Q0wlMp6CCQf5CcjfQARbvCkOARRPIQegCLcBGAsYHQ/s1600/ta.png)
 
 
+## USAGE
+
+
+- cd/main
+
+
+- node gen
+
+
+- node encr
+
+
+- node decr
+
+
+*gen* and *decr* use  `top secret` passphrase
+
+
+## DOC
+
+
+https://stackoverflow.com/questions/54087514/asymmetric-encryption-using-nodejs-crypto-module
+
+
+https://www.geeksforgeeks.org/node-js-crypto-privatedecrypt-method/
+
+
+https://blog.makeitreal.camp/la-magia-de-la-criptografia-asimetrica/
+
+
 ## BlockChain | NodeJS Guide
 
 

@@ -35,7 +35,7 @@ fs.readFile('./data/encrData', 'utf8', function (err, data) {
   console.log('encrData ->');
   console.log(data);
 
-  decrypt(data, "./key/private.key.pem", "pass")
+  decrypt(data, "./key/private.key.pem", 'top secret')
     .then(str => {
 
       console.log('decr ->');
