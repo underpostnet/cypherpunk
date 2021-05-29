@@ -7,16 +7,16 @@
 ## USAGE
 
 
-- cd/main
+`cd/main
 
 
-- node gen
+node gen
 
 
-- node encr
+node encr
 
 
-- node decr
+node decr`
 
 
 *gen* and *decr* use  `top secret` passphrase
@@ -32,6 +32,24 @@ https://www.geeksforgeeks.org/node-js-crypto-privatedecrypt-method/
 
 
 https://blog.makeitreal.camp/la-magia-de-la-criptografia-asimetrica/
+
+
+https://steemit.com/bitcoin/@dlystyr/how-to-create-bitcoin-addresses-in-node-js-cryptographically
+
+
+https://github.com/lhestermonroyo/WalletSystem
+
+
+https://www.geeksforgeeks.org/node-js-crypto-generatekeypair-method/
+
+
+https://www.micripto.com/claves-publicas-privadas/#:~:text=La%20clave%20p%C3%BAblica%20se%20utiliza,fondos%20en%20una%20direcci%C3%B3n%20determinada.
+
+
+https://ssd.eff.org/es/module/una-mirada-en-profundidad-al-cifrado-de-extremo-extremo-%C2%BFc%C3%B3mo-funcionan-los-sistemas-de#:~:text=El%20cifrado%20de%20llave%20p%C3%BAblica%20permite%20a%20alguien%20enviar%20su,que%20se%20le%20env%C3%ADan%20cifrados.
+
+
+
 
 
 ## BlockChain | NodeJS Guide
