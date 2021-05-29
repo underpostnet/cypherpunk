@@ -7,7 +7,7 @@
 ## USAGE
 
 
-`cd/main
+cd/main
 
 
 node gen
@@ -16,7 +16,7 @@ node gen
 node encr
 
 
-node decr`
+node decr
 
 
 *gen* and *decr* use  `top secret` passphrase
