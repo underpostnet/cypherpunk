@@ -58,6 +58,9 @@ https://ssd.eff.org/es/module/una-mirada-en-profundidad-al-cifrado-de-extremo-ex
 `npm install crypto-js`
 
 
+`npm install bitcoin-diff`
+
+
 ### Macro:
 
 
@@ -90,6 +93,23 @@ https://steemit.com/bitcoin/@stricker/como-crear-un-blockchain-con-javascript-y-
 
 
 https://aprendeblockchain.wordpress.com/fundamentos-tecnicos-de-blockchain/crea-tu-propia-blockchain-en-java-i/
+
+
+----------------------------
+
+
+https://en.bitcoin.it/wiki/Difficulty
+
+
+https://hashingit.com/blog/2014-06-15-0000/
+
+
+https://bitcoin.stackexchange.com/questions/5838/how-is-difficulty-calculated
+
+
+https://bitcoin.stackexchange.com/questions/67425/why-does-bitcoin-adjust-the-difficulty-every-2016-instead-of-2048-blocks
+
+----------------------------
 
 
 ![underpost.net](https://underpost.net/underpost-social.jpg)
