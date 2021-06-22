@@ -1,3 +1,7 @@
+// https://analysis.null.place/how-do-the-bitcoin-mining-algorithms-work/#form7
+// https://developer.bitcoin.org/reference/block_chain.html#target-nbits
+// https://learnmeabitcoin.com/beginners/difficulty#finding-the-target-using-the-difficulty
+
 function diffToTarget(diff) {
 
 	var buf = Buffer.alloc(32).fill(0);
@@ -32,14 +36,24 @@ function getDiff(time_seconds, hash_rate_seconds){
 
 
 let diff_a = getDiff((10*60), (65000/10)); // 62k - 65k por 10 s
+let diff_b0 =  getDiff((10*60), 8e9);
 let diff_b = getDiff((10*60), 8e10);
 
 // (Actual Time of Last 2015 Blocks / 20160 minutes)
-let new_diff = diff_a * ( 3600 / 20160 );
+let new_diff = diff_b0 * ( diff_b0 / diff_b );
 
-
+console.log(diffToTarget(-1));
+console.log(diffToTarget(0));
+console.log(diffToTarget(1));
+console.log(diffToTarget(0.0018));
+console.log(diffToTarget(0.001));
+console.log(diffToTarget(14484.16236123));
 console.log(diffToTarget(diff_a));
 console.log(diffToTarget(diff_b));
+
+console.log('new diff ->');
+console.log(new_diff);
+console.log(diffToTarget(new_diff));
 
 
 
