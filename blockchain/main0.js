@@ -25,35 +25,79 @@ function diffToTarget(diff) {
 	var m = BigInt(numberTo64BitBigInt((4.294901760e+9 / diff)))
 	buf.writeUInt32LE(Number(0xffffffffn & m) >>> 0, k << 2);
 	buf.writeUInt32LE(Number(m >> 32n) >>> 0, 4 + (k << 2));
+
+	// console.log('target diff -> ');
+	// console.log(buf.toString('hex'));
+
+
 	return buf.toString('hex');
+
 }
 
+function getZerosHash(hash){
+	let charList = [];
+	for(let char of hash){
+		charList.push(char);
+	}
+	charList = charList.reverse();
+	let target = "";
+	for(let char of charList){
+		if(char=="0"){
+			target+=char;
+		}else{
+			break;
+		}
+	}
+	return target;
+}
 
 function getDiff(time_seconds, hash_rate_seconds){
   // hashes -> nonce
   return  ((time_seconds*hash_rate_seconds)/Math.pow(2, 32))
 }
 
+function fixDiff(old_diff, new_diff){
+	return old_diff * ( old_diff / new_diff )
+}
 
-let diff_a = getDiff((10*60), (65000/10)); // 62k - 65k por 10 s
-let diff_b0 =  getDiff((10*60), 8e9);
-let diff_b = getDiff((10*60), 8e10);
+// en 10 segundos genera 65000 hashes de forma local
+console.log('diff_local ->');
+console.log( diffToTarget( getDiff(10, (65000/10) ) ) );
 
-// (Actual Time of Last 2015 Blocks / 20160 minutes)
-let new_diff = diff_b0 * ( diff_b0 / diff_b );
+let diff_a =  getDiff((60*10), 8e10);
+console.log('diff_a ->');
+console.log(diff_a);
+console.log('hash a ->');
+console.log(diffToTarget(diff_a));
+console.log('get zeros a ->');
+console.log(getZerosHash(diffToTarget(diff_a)));
 
+
+let diff_b = getDiff((60*10), 8e6);
+console.log('diff_b ->');
+console.log(diff_b);
+console.log('hash b ->');
+console.log(diffToTarget(diff_b));
+console.log('get zeros b ->');
+console.log(getZerosHash(diffToTarget(diff_b)));
+
+
+let new_diff = fixDiff(diff_a, diff_b);
+console.log('new_diff ->');
+console.log(new_diff);
+console.log('hash new_diff ->');
+console.log(diffToTarget(new_diff));
+console.log('get zeros new_diff ->');
+console.log(getZerosHash(diffToTarget(new_diff)));
+
+
+console.log('test ->');
 console.log(diffToTarget(-1));
 console.log(diffToTarget(0));
 console.log(diffToTarget(1));
 console.log(diffToTarget(0.0018));
 console.log(diffToTarget(0.001));
 console.log(diffToTarget(14484.16236123));
-console.log(diffToTarget(diff_a));
-console.log(diffToTarget(diff_b));
-
-console.log('new diff ->');
-console.log(new_diff);
-console.log(diffToTarget(new_diff));
 
 
 
