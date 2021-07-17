@@ -92,12 +92,23 @@ console.log(getZerosHash(diffToTarget(new_diff)));
 
 
 console.log('test ->');
-console.log(diffToTarget(-1));
+/*console.log(diffToTarget(-1));
 console.log(diffToTarget(0));
 console.log(diffToTarget(1));
 console.log(diffToTarget(0.0018));
 console.log(diffToTarget(0.001));
-console.log(diffToTarget(14484.16236123));
+console.log(diffToTarget(14484.16236123));*/
+
+
+let bug = 0.00012126160457296404;
+
+console.log(diffToTarget(bug*1.02));
+console.log(diffToTarget(bug));
+console.log(diffToTarget(bug*0.98));
+console.log('-');
+console.log(diffToTarget(0.00013126160457296404));
+console.log(diffToTarget(0.00014825079990276861));
+console.log(diffToTarget(9e9));
 
 
 
